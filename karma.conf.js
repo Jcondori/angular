@@ -24,17 +24,19 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
+    autoWatch: false,
     // browsers: ['Chrome'],
-    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessNoSandbox'],
+    // browsers: ['Chrome', 'ChromeHeadless'],
+    browsers: ['ChromeHeadless'],
     // you can define custom flags
     customLaunchers: {
-      ChromeHeadlessNoSandbox: {
+      MyHeadlessChrome: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox']
+        flags: ['--disable-translate', '--disable-extensions', '--remote-debugging-port=9223']
       }
     },
-    singleRun: false,
+    // singleRun: false,
+    concurrency: Infinity,
     restartOnFileChange: true
   });
 };
