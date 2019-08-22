@@ -8,6 +8,8 @@ addons:
 language: node_js
 node_js:
   - 10.13.0
+cache:
+  npm: false
 before_install:
   - npm i -g npm@6.10.3
   - npm i -g @angular/cli
